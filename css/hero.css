@@ -1,0 +1,45 @@
+/* ===== Animasi roket di bagian hero (bintang, api, melayang) ===== */
+
+@keyframes haFloat {
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+@keyframes haFlame {
+  50% {
+    transform: scaleY(1.22);
+  }
+}
+@keyframes haTw {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes haPop {
+  from {
+    transform: scale(0.85) rotate(-6deg);
+  }
+}
+.ha {
+  display: block;
+  overflow: visible;
+  animation: haPop 0.5s;
+}
+.ha-r {
+  transform-origin: 100px 100px;
+  animation: haFloat 3.6s ease-in-out infinite;
+}
+.ha-f {
+  transform-origin: 100px 124px;
+  animation: haFlame 0.35s ease-in-out infinite;
+}
+.ha-s {
+  animation: haTw 2.4s ease-in-out infinite;
+}
+.hs-peng {
+  width: 66% !important;
+}

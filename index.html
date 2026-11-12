@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>BrainBattle - Pratinjau</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/simulasi.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+  </head>
+  <body>
+    <!-- ===== HALAMAN UTAMA ===== -->
+    <main>
+      <!-- Header: logo dan level -->
+      <header>
+        <div class="brand"><span id="logo"></span>Brain<b>Battle</b></div>
+        <span class="pill">Lv 1 · 0 XP</span>
+      </header>
+      <h1>Siap adu otak hari ini?</h1>
+      <p class="sub">
+        Latihan soal kelas XI untuk <b>Matematika</b>. Kumpulkan XP, buka lencana, dan adu peringkat
+        sekelas.
+      </p>
+      <button class="cta c1"><small>Siswa</small>Main sekarang</button
+      ><button class="cta c2"><small>Guru</small>Mabar bareng kelas</button
+      ><button class="life" id="jn" style="display: flex; margin: 0 auto 12px">
+        <i class="bi bi-key"></i> Gabung mabar dengan kode</button
+      ><button class="life" id="bbLatBtn" style="display: flex; margin: 0 auto 12px">
+        <i class="bi bi-collection-fill"></i> Latihan soal
+      </button>
+      <div class="sm-promo" id="smPromo">
+        <div class="sm-prow">
+          <span class="sm-ico"><i class="bi bi-atom"></i></span>
+          <div>
+            <h2>SIMULASI INTERAKTIF</h2>
+            <p>
+              Jelajahi konsep sains melalui eksperimen virtual yang interaktif. Pelajari Fisika,
+              Kimia, dan Biologi dengan mengamati, mencoba, dan menemukan jawaban.
+            </p>
+          </div>
+        </div>
+        <button type="button" class="sm-btn" id="smPromoBtn">
+          <i class="bi bi-play-fill"></i> Jelajahi simulasi
+        </button>
+      </div>
+      <div class="card">
+        <div class="peng" id="hero" style="width: 200px"></div>
+        <div class="tiles" id="tiles">
+          <button class="tile" data-m="Santai">
+            <span class="e" style="background: #2fb87a"><i class="bi bi-cup-hot-fill"></i></span
+            >Santai</button
+          ><button class="tile" data-m="Tantangan">
+            <span class="e" style="background: #ff7a45"><i class="bi bi-stopwatch-fill"></i></span
+            >Tantangan</button
+          ><button class="tile" data-m="Bertahan">
+            <span class="e" style="background: #e8446a"><i class="bi bi-heart-fill"></i></span
+            >Bertahan</button
+          ><button class="tile" data-lat="1">
+            <span class="e" style="background: #3b8de0"><i class="bi bi-collection-fill"></i></span
+            >Latihan Soal</button
+          ><button class="tile" id="smTile" type="button">
+            <span class="e" style="background: #ffc233; color: #101a3d; --ac: #fff"
+              ><i class="bi bi-atom"></i></span
+            >Simulasi</button
+          ><button class="tile">
+            <span class="e" style="background: #18a8a0"><i class="bi bi-people-fill"></i></span
+            >Kelas</button
+          ><button class="tile">
+            <span class="e" style="background: #7a5cf0"><i class="bi bi-trophy-fill"></i></span
+            >Prestasi
+          </button>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>2 · Atur tantangan</h2>
+        <div class="lb">Mode</div>
+        <div class="chips" id="modes">
+          <button class="chip">
+            <span class="e"><i class="bi bi-cup-hot-fill"></i></span>Santai</button
+          ><button class="chip on">
+            <span class="e"><i class="bi bi-stopwatch-fill"></i></span>Tantangan</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-heart-fill"></i></span>Bertahan
+          </button>
+        </div>
+        <div class="lb">Mata pelajaran</div>
+        <div class="chips" id="mapels">
+          <button class="chip on">
+            <span class="e"><i class="bi bi-grid"></i></span>Semua (90)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-calculator-fill"></i></span>Matematika (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-atom"></i></span>Fisika (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-flask"></i></span>Kimia (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-dna"></i></span>Biologi (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-cash-coin"></i></span>Ekonomi (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-book-fill"></i></span>Bahasa Indonesia (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-people-fill"></i></span>Sosiologi (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-globe-asia-australia"></i></span>Geografi (10)</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-translate"></i></span>Bahasa Inggris (10)
+          </button>
+        </div>
+        <div class="lb">Level</div>
+        <div class="chips">
+          <button class="chip on">
+            <span class="e"><i class="bi bi-grid"></i></span>Semua</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-flower1"></i></span>Mudah</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-fire"></i></span>Sedang</button
+          ><button class="chip">
+            <span class="e"><i class="bi bi-gem"></i></span>Sulit
+          </button>
+        </div>
+        <div class="lb">Jumlah soal</div>
+        <div class="chips" id="cnts">
+          <button class="chip on">10</button><button class="chip">20</button
+          ><button class="chip">Semua</button>
+        </div>
+        <button class="go">
+          <span class="e"><i class="bi bi-play-fill"></i></span> Mulai tantangan
+        </button>
+      </div>
+      <div class="panel" id="quiz" style="display: none">
+        <div class="top">
+          <span id="qn"></span><span id="hr"></span><span>Skor <b id="sc">0</b></span
+          ><span id="tt"></span>
+        </div>
+        <div class="bar"><i id="bf"></i></div>
+        <div class="lb" style="margin-top: 0" id="qm"></div>
+        <p class="q" id="qt"></p>
+        <div id="opts"></div>
+        <div
+          id="ex"
+          style="
+            display: none;
+            background: rgba(255, 209, 102, 0.1);
+            border-left: 4px solid #ffd166;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+          "
+        ></div>
+        <div id="fb" style="min-height: 24px; font-weight: 700; margin: 6px 0 10px"></div>
+        <button class="life" id="l5"><i class="bi bi-scissors"></i> 50:50</button
+        ><button class="life" id="lt"><i class="bi bi-plus-circle"></i> +10 dtk</button
+        ><button class="life" id="ls"><i class="bi bi-skip-forward-fill"></i> Lewati</button
+        ><button class="life" id="qx"><i class="bi bi-x-lg"></i> Keluar</button
+        ><button class="go" id="nx" style="display: none"></button>
+      </div>
+      <div class="panel" id="res" style="display: none; text-align: center">
+        <div style="font-size: 3.2rem; color: #ffd166"><i class="bi bi-trophy-fill"></i></div>
+        <h2>Tantangan selesai</h2>
+        <p id="rm" style="font-style: italic; margin: 0 0 4px"></p>
+        <div id="rx" style="color: #ffd166; font-weight: 800"></div>
+        <div class="stats" id="rs"></div>
+        <button class="go" id="again">Main lagi</button
+        ><button
+          class="go"
+          id="retry"
+          style="
+            display: none;
+            margin-top: 10px;
+            background: var(--cream);
+            color: var(--ink);
+            box-shadow: 0 5px 0 #c9b690;
+          "
+        ></button
+        ><button
+          class="go"
+          id="back"
+          style="
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+            margin-top: 10px;
+          "
+        >
+          Kembali ke beranda
+        </button>
+      </div>
+      <div class="panel" id="guru" style="display: none">
+        <h2>Menu guru · Mabar</h2>
+        <p style="margin: 0 0 4px; font-size: 0.95rem">
+          Buat ruang, bagikan kode ke siswa, lalu mulai kuis bersama. Skor dan peringkat tampil
+          langsung.
+        </p>
+        <div class="bs-act" style="margin-top: 8px">
+          <button class="life" id="gk"><i class="bi bi-pencil"></i> Ketik soal sendiri</button>
+        </div>
+        <div class="lb">Mata pelajaran</div>
+        <div class="chips" id="gm"></div>
+        <div class="lb">Jumlah soal</div>
+        <div class="chips" id="gn">
+          <button class="chip">5</button><button class="chip on">10</button
+          ><button class="chip">20</button><button class="chip">Semua</button>
+        </div>
+        <div class="lb">Waktu per soal</div>
+        <div class="chips" id="gt">
+          <button class="chip">15 dtk</button><button class="chip on">20 dtk</button
+          ><button class="chip">30 dtk</button><button class="chip">Tanpa waktu</button>
+        </div>
+        <button class="go" id="mk"><i class="bi bi-people-fill"></i> Buat ruang mabar</button>
+        <div id="gmode" style="margin-top: 12px; font-size: 0.82rem; color: var(--mu)"></div>
+        <button class="life" id="gb" style="margin-top: 10px">
+          <i class="bi bi-x-lg"></i> Kembali
+        </button>
+      </div>
+      <div class="panel" id="join" style="display: none">
+        <h2>Gabung mabar</h2>
+        <input
+          class="inp"
+          id="jc"
+          maxlength="5"
+          placeholder="Kode ruang (5 karakter)"
+          style="text-transform: uppercase; letter-spacing: 0.2em"
+        /><input class="inp" id="jname" maxlength="16" placeholder="Namamu" /><button
+          class="go"
+          id="jg"
+        >
+          Gabung</button
+        ><button class="life" id="jb" style="margin-top: 10px">
+          <i class="bi bi-x-lg"></i> Kembali
+        </button>
+      </div>
+      <div class="panel" id="room" style="display: none">
+        <div class="top">
+          <span class="lb" style="margin: 0">Kode ruang</span><span id="rt"></span>
+        </div>
+        <div class="code" id="rcode"></div>
+        <div class="bar" id="rbarw" style="display: none"><i id="rbar"></i></div>
+        <div id="rbody"></div>
+        <button class="life" id="rxr" style="margin-top: 10px">
+          <i class="bi bi-x-lg"></i> Keluar
+        </button>
+      </div>
+      <div class="panel" id="lat" style="display: none">
+        <h2>Latihan soal</h2>
+        <p style="margin: 0 0 12px; font-size: 0.95rem">
+          Tempel soal dari Word atau buat sendiri, lalu langsung dikerjakan. Guru bisa mengatur
+          paket tanpa batas waktu.
+        </p>
+        <div id="latList"></div>
+        <button class="go" id="latNew">
+          <i class="bi bi-plus-circle"></i> Buat paket soal baru
+        </button>
+        <div class="lb">Dapat tautan atau kode dari guru?</div>
+        <input
+          class="inp"
+          id="latCode"
+          placeholder="Tempel tautan atau kode paket di sini"
+        /><button class="life" id="latUse">
+          <i class="bi bi-check2-circle"></i> Pakai paket ini
+        </button>
+        <div>
+          <button class="life" id="latBack" style="margin-top: 10px">
+            <i class="bi bi-x-lg"></i> Kembali
+          </button>
+        </div>
+      </div>
+      <div class="panel" id="edit" style="display: none">
+        <h2 id="edTitle">Paket soal baru</h2>
+        <input
+          class="inp"
+          id="edName"
+          maxlength="60"
+          placeholder="Nama paket, mis. Latihan UH Matematika Bab 3"
+        />
+        <div class="lb">Waktu mengerjakan</div>
+        <div class="chips" id="edTime">
+          <button class="chip on">Tanpa waktu</button><button class="chip">Pakai waktu</button>
+        </div>
+        <div id="edSecsW" style="display: none">
+          <div class="lb">Waktu per soal</div>
+          <div class="chips" id="edSecs">
+            <button class="chip">15 dtk</button><button class="chip on">20 dtk</button
+            ><button class="chip">30 dtk</button><button class="chip">45 dtk</button
+            ><button class="chip">60 dtk</button>
+          </div>
+        </div>
+        <div class="lb">Urutan pilihan jawaban</div>
+        <div class="chips" id="edShuf">
+          <button class="chip on">Tetap seperti di soal</button><button class="chip">Diacak</button>
+        </div>
+        <div class="lb">Daftar soal (<span id="edCount">0</span>)</div>
+        <p style="margin: 0 0 10px; font-size: 0.85rem; color: var(--mu)">
+          Pilih lingkaran di kiri pilihan yang benar.
+        </p>
+        <div id="edList"></div>
+        <div class="bs-act" style="margin-bottom: 6px">
+          <button class="life" id="edAdd"><i class="bi bi-plus-circle"></i> Tambah soal</button>
+        </div>
+        <details class="bs-d">
+          <summary>Tempel teks soal dari Word</summary>
+          <p>Salin soal dari Word, lalu tempel di sini.</p>
+          <textarea
+            class="inp"
+            id="edPaste"
+            rows="6"
+            placeholder="1. Ibu kota Indonesia adalah ...&#10;A. Bandung&#10;B. Jakarta&#10;C. Medan&#10;D. Surabaya&#10;Jawaban: B"
+          ></textarea>
+          <button class="life" id="edPasteGo"><i class="bi bi-check2-circle"></i> Baca soal</button>
+        </details>
+        <details class="bs-d">
+          <summary>Format soal yang terbaca</summary>
+          <pre>
+1. Ibu kota Indonesia adalah ...
+A. Bandung
+B. Jakarta
+C. Surabaya
+D. Medan
+Jawaban: B
+Pembahasan: Jakarta adalah ibu kota negara.
+2. Soal berikutnya ...
+A. ...</pre
+          >
+          <p>
+            Nomor soal dan huruf pilihan (A sampai E) boleh diketik biasa. Kunci bisa ditulis per
+            soal (<b>Jawaban: B</b>) atau di akhir dokumen setelah tulisan <b>Kunci Jawaban</b> (<b
+              >1. B 2. C 3. A</b
+            >). Gambar dan rumus tidak ikut terbawa, jadi tulis rumus sebagai teks biasa. Setelah
+            ditempel, periksa dulu jawabannya sebelum menyimpan.
+          </p>
+        </details>
+        <button class="go" id="edSave"><i class="bi bi-check2-circle"></i> Simpan paket</button
+        ><button class="life" id="edCancel" style="margin-top: 10px">
+          <i class="bi bi-x-lg"></i> Batal
+        </button>
+      </div>
+      <div class="panel">
+        <h2>Lencana yang bisa kamu raih</h2>
+        <div class="seals">
+          <div class="seal">
+            <span class="e" style="background: #4eff91"><i class="bi bi-flag-fill"></i></span
+            >Langkah Pertama
+          </div>
+          <div class="seal lock">
+            <span class="e" style="background: #7fd4ff"><i class="bi bi-gem"></i></span>Sempurna
+          </div>
+          <div class="seal lock">
+            <span class="e" style="background: #ff8a3d"><i class="bi bi-fire"></i></span>Api Membara
+          </div>
+          <div class="seal lock">
+            <span class="e" style="background: #f0c060"
+              ><i class="bi bi-lightning-charge-fill"></i></span
+            >Kilat
+          </div>
+          <div class="seal lock">
+            <span class="e" style="background: #ff6b6b"
+              ><i class="bi bi-shield-fill-check"></i></span
+            >Penyintas
+          </div>
+          <div class="seal">
+            <span class="e" style="background: #c9a0ff"><i class="bi bi-collection-fill"></i></span
+            >Kolektor Soal
+          </div>
+          <div class="seal lock">
+            <span class="e" style="background: #f5e6c8"><i class="bi bi-mortarboard-fill"></i></span
+            >Rajin Berlatih
+          </div>
+        </div>
+      </div>
+      <p class="note">
+        Pratinjau ikon buatan sendiri BrainBattle. Tekan Main sekarang untuk bermain sendiri, atau
+        Guru untuk mabar: pilih jumlah soal (10, 20, atau Semua) dari bank 90 soal kelas XI.
+      </p>
+    </main>
+    <!-- ===== SIMULASI INTERAKTIF ===== -->
+    <section id="bbSim" hidden aria-label="Simulasi Interaktif">
+      <div class="sm-wrap">
+        <div id="smCat">
+          <div class="sm-bar">
+            <button type="button" class="life sm-lbtn" id="smHome">
+              <i class="bi bi-x-lg"></i> Kembali ke beranda
+            </button>
+          </div>
+          <div class="sm-hero">
+            <div class="sm-mas" id="smMas"></div>
+            <div>
+              <div class="sm-title">Simulasi Interaktif</div>
+              <p class="sm-lead">
+                Jelajahi konsep sains melalui eksperimen virtual yang interaktif. Pelajari Fisika,
+                Kimia, dan Biologi dengan mengamati, mencoba, dan menemukan jawaban.
+              </p>
+            </div>
+          </div>
+          <div class="sm-search">
+            <svg
+              class="ic"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="m16 16 4.5 4.5" /></svg
+            ><input
+              class="inp"
+              id="smQ"
+              type="search"
+              placeholder="Cari simulasi atau materi..."
+              autocomplete="off"
+              aria-label="Cari simulasi atau materi"
+            />
+          </div>
+          <div class="lb">Mata pelajaran</div>
+          <div class="sm-chips" id="smSubj" role="group" aria-label="Filter mata pelajaran"></div>
+          <div class="lb">Materi</div>
+          <div
+            class="sm-chips sm-scroll"
+            id="smTopic"
+            role="group"
+            aria-label="Filter materi"
+          ></div>
+          <div class="sm-count" id="smCount" aria-live="polite"></div>
+          <div id="smList"></div>
+        </div>
+        <div id="smPlay" hidden></div>
+      </div>
+    </section>
+    <!-- JavaScript: urutan jangan diubah, file belakang memakai file depan -->
+    <script src="js/ui.js"></script>
+    <script src="js/brain.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/rocket.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/sets.js"></script>
+    <script src="js/multiplayer.js"></script>
+    <script src="js/simulasi.js"></script>
+  </body>
+</html>

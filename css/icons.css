@@ -1,0 +1,36 @@
+/* ===== Gaya ikon SVG ===== */
+
+i.bi::before {
+  content: none !important;
+}
+.ic {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  overflow: visible;
+}
+.ic .a {
+  fill: var(--ac, #ffd166);
+}
+.ic .f {
+  fill: currentColor;
+}
+.ic .sa {
+  stroke: var(--ac, #ffd166);
+}
+.ic .t {
+  fill: var(--ac, #ffd166);
+  stroke: none;
+  font:
+    800 7px Nunito,
+    sans-serif;
+  text-anchor: middle;
+}
+.menu,
+.chip.active,
+.cta-cream {
+  --ac: #ff7a45;
+}
+.seal .disc {
+  --ac: #fff;
+}
